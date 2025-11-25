@@ -29,6 +29,7 @@
 		"react-dom": "^19.2.0",
 		"split-type": "^0.3.4",
 		"tailwind-merge": "^2.6.0",
+		"tailwindcss": "^4.1.17",
 		"typescript": "^5.9.3",
 		"wrangler": "^4.50.0"
 	},
