@@ -5,9 +5,7 @@ import icon from "astro-icon"
 import metaTags from "astro-meta-tags"
 import { defineConfig } from "astro/config"
 import { config } from "./src/config"
-
 import cloudflare from "@astrojs/cloudflare"
-
 import tailwindcss from "@tailwindcss/vite"
 
 export default defineConfig({
