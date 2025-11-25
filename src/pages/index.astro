@@ -1,0 +1,61 @@
+---
+import AuroraText from "@/components/animate/AuroraText.astro"
+import Layout from "@/layouts/Layout.astro"
+
+import ImageBlurFocus from "@/components/ImageBlurFocus.astro"
+import Socials from "@/components/widgets/Socials.astro"
+import { socials } from "@/data/data"
+---
+
+<Layout bodyStyle="bg-[#f8fafc]" title="" description="">
+	<h2 class="select-none text-5xl lg:text-7xl uppercase text-center tracking-tighter">
+		<span class="font-medium text-zinc-500">Гостиница</span>
+		<AuroraText speed={1} colors={["#111", "#0C1C50", "#22052D"]} class="font-bold">
+			Бекарыс
+		</AuroraText>
+	</h2>
+
+	<Socials data={socials} />
+	<ImageBlurFocus />
+
+	<!-- <SocialButton
+		title="YouTube"
+		href="#"
+		class="text-blue-500"
+		social="youtube"
+		aria_label="Youtube"
+	/> -->
+
+	<!-- <AvatarsList avatarUrls={avatars} numPeople={54} /> -->
+
+	<section id="yandex" class="flex flex-wrap justify-center md:justify-between gap-6">
+		<div style="width:530px;height:440px;overflow:hidden;position:relative;">
+			<iframe
+				style="width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box"
+				src="https://yandex.ru/maps-reviews-widget/200057495767?comments"></iframe><a
+				href="https://yandex.kz/maps/org/bekarys/200057495767/"
+				target="_blank"
+				style="box-sizing:border-box;text-decoration:none;color:#b3b3b3;font-size:10px;font-family:YS Text,sans-serif;padding:0 20px;position:absolute;bottom:8px;width:100%;text-align:center;left:0;overflow:hidden;text-overflow:ellipsis;display:block;max-height:14px;white-space:nowrap;padding:0 16px;box-sizing:border-box"
+				>Бекарыс на карте Астаны — Яндекс Карты</a
+			>
+		</div>
+
+		<div style="position:relative;overflow:hidden;" class="mx-auto">
+			<a
+				href="https://yandex.kz/maps/org/bekarys/200057495767/?utm_medium=mapframe&utm_source=maps"
+				style="color:#eee;font-size:12px;position:absolute;top:0px;">Бекарыс</a
+			><a
+				href="https://yandex.kz/maps/163/astana/category/hotel/184106414/?utm_medium=mapframe&utm_source=maps"
+				style="color:#eee;font-size:12px;position:absolute;top:14px;"
+				>Гостиница в Астане</a
+			><iframe
+				loading="lazy"
+				src="https://yandex.kz/map-widget/v1/?ll=71.513326%2C51.150682&mode=search&oid=200057495767&ol=biz&z=16.81"
+				class="md:max-w-[540px] max-w-full"
+				width="540"
+				height="440"
+				allowfullscreen="true"
+				style="position:relative;"></iframe>
+		</div>
+	</section>
+</Layout>

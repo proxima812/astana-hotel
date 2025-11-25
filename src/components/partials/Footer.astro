@@ -1,0 +1,48 @@
+---
+import Container from "./Container.astro"
+---
+
+<footer>
+	<hr
+		class="h-px w-full border-0 bg-gradient-to-r from-transparent via-gray-200 to-transparent"
+	/>
+	<div class="py-8 bg-white">
+		<Container>
+			<!-- <div
+				class="justify-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14"
+			>
+				{
+					navigation_footer.map(item => {
+						const columnKey = Object.keys(item).find(key => key.startsWith("colunm"))
+						const links = columnKey ? item[columnKey] : []
+
+						return (
+							<div class="flex flex-col md:items-start items-center">
+								<span class="block mb-4 font-medium">{item.category}</span>
+								<nav class="flex flex-col gap-3">
+									{Array.isArray(links) &&
+										links.map(link => (
+											<a
+												class={cn("text-zinc-700 flex items-center gap-1", link.style)}
+												href={link.href}
+												target={link.target}
+											>
+												{link.icon && <Icon name={link.icon} />}
+												<span>{link.label}</span>
+											</a>
+										))}
+								</nav>
+							</div>
+						)
+					})
+				}
+			</div> -->
+
+			<div class="md:justify-between flex-wrap gap-3 justify-center flex items-center">
+				<span class="text-zinc-600">
+					&copy; Гостиница Бекарыс <b>{new Date().getFullYear()}</b></span
+				>
+			</div>
+		</Container>
+	</div>
+</footer>

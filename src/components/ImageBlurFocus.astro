@@ -1,0 +1,62 @@
+---
+import { Image } from "astro:assets"
+
+import img1 from "@/assets/images/669732074.jpg"
+import img2 from "@/assets/images/669732081.jpg"
+import img3 from "@/assets/images/669732085.jpg"
+import img4 from "@/assets/images/669732091.jpg"
+import img5 from "@/assets/images/669732106.jpg"
+import img6 from "@/assets/images/669732136.jpg"
+import img7 from "@/assets/images/669732142.jpg"
+import img8 from "@/assets/images/669732159.jpg"
+import img9 from "@/assets/images/669732203.jpg"
+import img10 from "@/assets/images/669732215.jpg"
+import img11 from "@/assets/images/670841410.jpg"
+import img12 from "@/assets/images/670841831.jpg"
+import img13 from "@/assets/images/670844085.jpg"
+import img14 from "@/assets/images/670844310.jpg"
+import img15 from "@/assets/images/670995181.jpg"
+import img16 from "@/assets/images/672713354.jpg"
+import img17 from "@/assets/images/748510460.jpg"
+import img18 from "@/assets/images/748510462.jpg"
+
+const photos = [
+	{ src: img1, alt: "", title: "" },
+	{ src: img6, alt: "", title: "" },
+	{ src: img15, alt: "", title: "" },
+	{ src: img2, alt: "", title: "" },
+	{ src: img8, alt: "", title: "" },
+	{ src: img3, alt: "", title: "" },
+	{ src: img4, alt: "", title: "" },
+	{ src: img7, alt: "", title: "" },
+	{ src: img5, alt: "", title: "" },
+	{ src: img9, alt: "", title: "" },
+	{ src: img10, alt: "", title: "" },
+	{ src: img11, alt: "", title: "" },
+	{ src: img12, alt: "", title: "" },
+	{ src: img13, alt: "", title: "" },
+	{ src: img14, alt: "", title: "" },
+	{ src: img16, alt: "", title: "" },
+	{ src: img17, alt: "", title: "" },
+	{ src: img18, alt: "", title: "" },
+]
+---
+
+<section class="lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3 grid">
+	{
+		photos.map((img, i) => (
+			<div
+				class={`rounded-xl shadow-md overflow-hidden h-full md:h-[170px]
+					${i >= photos.length - 2 ? "md:col-span-2 md:h-[250px] lg:col-span-2" : ""}
+				`}
+			>
+				<Image
+					class="rounded-xl object-cover w-full h-full"
+					src={img.src}
+					title={img.title}
+					alt={img.alt}
+				/>
+			</div>
+		))
+	}
+</section>

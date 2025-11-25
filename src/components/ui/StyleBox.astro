@@ -1,0 +1,114 @@
+---
+import { cn } from "@/utils/cn"
+
+interface Props {
+	variant?:
+		| "light"
+		| "gray"
+		| "default"
+		| "blue"
+		| "emerald"
+		| "red"
+		| "orange"
+		| "purple"
+		| "pink"
+		| "yellow"
+		| "slate"
+	outClassFirst?: string
+	outClassSecond?: string
+	innerClass?: string
+}
+
+const {
+	variant = "default",
+	outClassFirst = "",
+	outClassSecond = "",
+	innerClass = "",
+} = Astro.props
+
+const presets = {
+	default: {
+		outFirst: "",
+		outSecond: "",
+		inner: "",
+	},
+	light: {
+		outFirst: "bg-white ring-1 ring-black/5",
+		outSecond: "bg-white/80",
+		inner: "bg-white shadow-lg",
+	},
+	gray: {
+		outFirst: "bg-zinc-100 ring-1 ring-black/10",
+		outSecond: "bg-zinc-50",
+		inner: "bg-zinc-50 shadow-md",
+	},
+	blue: {
+		outFirst: "bg-blue-100 ring-1 ring-blue-200",
+		outSecond: "bg-blue-50",
+		inner: "bg-blue-200/50 shadow-md",
+	},
+	emerald: {
+		outFirst: "bg-emerald-100 ring-1 ring-emerald-200",
+		outSecond: "bg-emerald-50",
+		inner: "bg-emerald-200/50 shadow-md",
+	},
+	red: {
+		outFirst: "bg-red-100 ring-1 ring-red-200",
+		outSecond: "bg-red-50",
+		inner: "bg-red-200/50 shadow-md",
+	},
+	orange: {
+		outFirst: "bg-orange-100 ring-1 ring-orange-200",
+		outSecond: "bg-orange-50",
+		inner: "bg-orange-200/50 shadow-md",
+	},
+	purple: {
+		outFirst: "bg-purple-100 ring-1 ring-purple-200",
+		outSecond: "bg-purple-50",
+		inner: "bg-purple-200/50 shadow-md",
+	},
+	pink: {
+		outFirst: "bg-pink-100 ring-1 ring-pink-200",
+		outSecond: "bg-pink-50",
+		inner: "bg-pink-200/50 shadow-md",
+	},
+	yellow: {
+		outFirst: "bg-yellow-100 ring-1 ring-yellow-200",
+		outSecond: "bg-yellow-50",
+		inner: "bg-yellow-200/50 shadow-md",
+	},
+	slate: {
+		outFirst: "bg-slate-100 ring-1 ring-slate-200",
+		outSecond: "bg-slate-50",
+		inner: "bg-slate-200/50 shadow-md",
+	},
+}
+
+const preset = presets[variant] ?? presets.default
+---
+
+<div
+	class={`${cn(
+		"-m-2 grid max-w-lg grid-cols-1 rounded-[2rem] shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5",
+		preset.outFirst,
+		outClassFirst,
+	)}`}
+>
+	<div
+		class={`${cn(
+			"grid grid-cols-1 rounded-[2rem] p-2 shadow-md shadow-black/5",
+			preset.outSecond,
+			outClassSecond,
+		)}`}
+	>
+		<div
+			class={`${cn(
+				"rounded-3xl p-10 ring-1 ring-black/5 lg:shadow-2xl",
+				preset.inner,
+				innerClass,
+			)}`}
+		>
+			<slot />
+		</div>
+	</div>
+</div>
