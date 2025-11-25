@@ -14,7 +14,6 @@
 		"@astrojs/react": "4.4.2",
 		"@astrojs/rss": "4.0.14",
 		"@astrojs/sitemap": "3.6.0",
-		"@astrojs/tailwind": "6.0.2",
 		"@iconify-json/mdi": "^1.2.3",
 		"@paper-design/shaders-react": "^0.0.43",
 		"@tailwindcss/vite": "^4.1.17",
