@@ -28,8 +28,8 @@ const socialImageURL = new URL(
 	Astro.url,
 ).href
 
-const mainTitle = title  || config.site.OG.title
-const mainDescription = description  || config.site.OG.description
+const mainTitle = title || config.site.OG.title
+const mainDescription = description || config.site.OG.description
 const mainAuthor = author || config.site.OG.author
 const mainOGImage = socialImageURL || config.site.OG.defaultImage
 
@@ -131,3 +131,44 @@ Design and development by:
 /_/  /_/   /_/   /_/     /_/   /_/|_|  /_/ /_/ \__,_/  /_/ /_/ 
 ================================================================
 -->
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+	;(function (m, e, t, r, i, k, a) {
+		m[i] =
+			m[i] ||
+			function () {
+				;(m[i].a = m[i].a || []).push(arguments)
+			}
+		m[i].l = 1 * new Date()
+		for (var j = 0; j < document.scripts.length; j++) {
+			if (document.scripts[j].src === r) {
+				return
+			}
+		}
+		;(k = e.createElement(t)),
+			(a = e.getElementsByTagName(t)[0]),
+			(k.async = 1),
+			(k.src = r),
+			a.parentNode.insertBefore(k, a)
+	})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=105568231", "ym")
+
+	ym(105568231, "init", {
+		ssr: true,
+		webvisor: true,
+		clickmap: true,
+		ecommerce: "dataLayer",
+		accurateTrackBounce: true,
+		trackLinks: true,
+	})
+</script>
+<noscript
+	><div>
+		<img
+			src="https://mc.yandex.ru/watch/105568231"
+			style="position:absolute; left:-9999px;"
+			alt=""
+		/>
+	</div></noscript
+>
+<!-- /Yandex.Metrika counter -->

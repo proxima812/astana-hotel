@@ -12,7 +12,7 @@ export const config = {
 			keywords: "",
 		},
 		verifications: [
-			{ name_verification: "yandex-verification", content: "" }, // Подтверждение владения сайтом в Яндекс.Вебмастере
+			{ name_verification: "yandex-verification", content: "fe684a8eb7515482" }, // Подтверждение владения сайтом в Яндекс.Вебмастере
 			{ name_verification: "google-site-verification", content: "" }, // Подтверждение сайта в Google Search Console
 			{ name_verification: "msvalidate.01", content: "" }, // Верификация для Bing Webmaster Tools
 			{ name_verification: "p:domain_verify", content: "" }, // Проверка домена Pinterest
