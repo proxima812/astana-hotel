@@ -5,15 +5,21 @@ import Layout from "@/layouts/Layout.astro"
 import ImageBlurFocus from "@/components/ImageBlurFocus.astro"
 import Socials from "@/components/widgets/Socials.astro"
 import { socials } from "@/data/data"
+import { Icon } from "astro-icon/components"
 ---
 
 <Layout bodyStyle="bg-[#f8fafc]" title="" description="">
-	<h2 class="select-none text-5xl lg:text-7xl uppercase text-center tracking-tighter">
-		<span class="font-medium text-zinc-500">Гостиница</span>
-		<AuroraText speed={1} colors={["#111", "#0C1C50", "#22052D"]} class="font-bold">
-			Бекарыс
-		</AuroraText>
-	</h2>
+	<div class="flex justify-center items-center flex-col">
+		<span class="text-zinc-600 flex items-center gap-1"
+			><Icon name="mdi:hours-24" /><span>Круглосуточно <b>24/7</b></span></span
+		>
+		<h1 class="select-none text-5xl lg:text-7xl uppercase text-center tracking-tighter">
+			<span class="font-medium text-zinc-500">Гостиница</span>
+			<AuroraText speed={1} colors={["#111", "#0C1C50", "#22052D"]} class="font-bold">
+				Бекарыс
+			</AuroraText>
+		</h1>
+	</div>
 
 	<Socials data={socials} />
 
