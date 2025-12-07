@@ -1,0 +1,160 @@
+---
+import Yandex from "@/components/Yandex.astro"
+import { rooms_info } from "@/data/data"
+import Layout from "@/layouts/Layout.astro"
+---
+
+<Layout title={rooms_info.other.title} description={rooms_info.other.desc} indexRobots>
+	<main class="md:py-6 py-0 flex flex-col gap-8 md:gap-12">
+		<section class="relative flex gap-8 flex-col justify-center">
+			<!-- <div class="md:flex grid grid-cols-2 gap-2 justify-center">
+				{
+					Object.values(rooms_info)
+						.slice(1, 5)
+						.map(room => (
+							<img
+								src={room.image}
+								class="w-[210px] shadow-md rounded-xl object-cover"
+								alt={room.title}
+							/>
+						))
+				}
+			</div> -->
+			<div class="self-center text-center">
+				<p class="text-zinc-500 text-sm">Бағалауды қалдырыңыз.</p>
+				<p class="text-zinc-500 text-sm">Пожалуйста, оставьте оценку.</p>
+				<p class="text-zinc-900 max-w-[320px] mt-3">Сіздің пікіріңіз біз үшін маңызды!</p>
+				<p class="text-zinc-900 max-w-[320px]">Ваш отзыв важен для нас!</p>
+			</div>
+		</section>
+
+		<div id="rating-widget" class="max-w-full mx-auto text-center font-sans">
+			<p class="mb-2 text-gray-800 text-lg">Біздің қызметімізді бағалаңыз:</p>
+			<p class="mb-2 text-gray-800 text-lg">Оцените наш сервис:</p>
+
+			<div id="stars" class="flex justify-center gap-2 cursor-pointer select-none my-6">
+				{
+					[1, 2, 3, 4, 5].map(num => (
+						<span
+							class="star text-5xl text-gray-300 transition-colors duration-200"
+							data-value={num}
+						>
+							★
+						</span>
+					))
+				}
+			</div>
+
+			<div id="message-blocks" class="w-full">
+				<!-- Сообщение и форма -->
+				<div id="msg-sorry" class="hidden font-semibold">
+					<p class="mb-2 text-zinc-700">Артықшылықтары мен кемшіліктерін сипаттаңыз:</p>
+					<p class="mb-2 text-zinc-700">Опишите плюсы и минусы:</p>
+					<textarea
+						id="feedbackText"
+						rows="3"
+						class="w-full max-w-md border rounded-lg p-2 text-sm mb-3"></textarea>
+					<button
+						id="sendFeedbackBtn"
+						class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+					>
+						Жіберу / Отправить
+					</button>
+					<p id="sentMsg" class="hidden mt-3 text-green-600 font-medium">
+						Кері байланыс жіберілді! / Отзыв отправлен!
+					</p>
+				</div>
+
+				<!-- Благодарность -->
+				<div id="msg-thanks" class="hidden">
+					<p class="mb-3 text-zinc-700">Опишите плюсы и минусы по ссылке:</p>
+					<Yandex />
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<script>
+		const stars = document.querySelectorAll(".star")
+		const msgSorry = document.getElementById("msg-sorry")
+		const msgThanks = document.getElementById("msg-thanks")
+		const feedbackText = document.getElementById("feedbackText")
+		const sendBtn = document.getElementById("sendFeedbackBtn")
+		const sentMsg = document.getElementById("sentMsg")
+
+		let selectedRating = 0
+		let ratingLocked = false
+
+		// === Загружаем состояние из localStorage ===
+		const savedRating = +localStorage.getItem("userRating") || 0
+		const feedbackSent = localStorage.getItem("feedbackSent") === "true"
+
+		if (savedRating) {
+			selectedRating = savedRating
+			ratingLocked = true
+			updateStars(selectedRating)
+			updateMessage(selectedRating)
+		}
+
+		if (feedbackSent && selectedRating < 5 && selectedRating > 0) {
+			msgSorry.classList.add("hidden")
+			sentMsg.classList.remove("hidden")
+		}
+
+		// === Слушатели событий ===
+		stars.forEach(star => {
+			star.addEventListener("mouseover", () => {
+				if (ratingLocked) return
+				updateStars(+star.dataset.value)
+			})
+
+			star.addEventListener("mouseout", () => {
+				if (ratingLocked) return
+				updateStars(selectedRating)
+			})
+
+			star.addEventListener("click", () => {
+				if (ratingLocked) return
+				selectedRating = +star.dataset.value
+				localStorage.setItem("userRating", selectedRating)
+				ratingLocked = true
+				updateStars(selectedRating)
+				updateMessage(selectedRating)
+			})
+		})
+
+		// === Обновление звёзд ===
+		function updateStars(value) {
+			stars.forEach(s => {
+				s.classList.toggle("text-yellow-400", +s.dataset.value <= value)
+				s.classList.toggle("text-gray-300", +s.dataset.value > value)
+			})
+		}
+
+		// === Обновление сообщений ===
+		function updateMessage(value) {
+			msgSorry.classList.add("hidden")
+			msgThanks.classList.add("hidden")
+
+			if (value < 5 && value > 0) {
+				msgSorry.classList.remove("hidden")
+			} else if (value === 5) {
+				msgThanks.classList.remove("hidden")
+			}
+		}
+
+		// === Отправка отзыва ===
+		sendBtn.addEventListener("click", () => {
+			const text = feedbackText.value.trim()
+			if (!text) return alert("Пожалуйста, введите текст отзыва.")
+
+			feedbackText.value = ""
+			sentMsg.classList.remove("hidden")
+			sendBtn.disabled = true
+			sendBtn.classList.add("opacity-50", "cursor-not-allowed")
+
+			// сохраняем факт отправки
+			localStorage.setItem("feedbackSent", "true")
+		})
+	</script>
+</Layout>

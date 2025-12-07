@@ -68,6 +68,33 @@ export const socials = [
 
 const posts = await getCollection("posts")
 
+export const rooms_info = {
+	other: {
+		title: "Отзыв о номерах и услугах",
+		desc: "Отзыв о номерах и услугах",
+	},
+	b1: {
+		title: "Двухместный номер #1",
+		image: "/image/b1.jpg",
+		desc: "Двухместный номер #1",
+	},
+	b2: {
+		title: "Двухместный номер #2",
+		image: "/image/b2.jpg",
+		desc: "Двухместный номер #2",
+	},
+	b3: {
+		title: "Двухместный номер #3",
+		image: "/image/b3.jpg",
+		desc: "Двухместный номер #3",
+	},
+	b4: {
+		title: "Одноместный номер #4",
+		image: "/image/b4.jpg",
+		desc: "Одноместный номер #4",
+	},
+}
+
 export const navigation = [
 	{
 		label: "Отзывы",
