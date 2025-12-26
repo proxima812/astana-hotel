@@ -45,12 +45,11 @@ const photos = [
 	{ src: img17, alt: "Фен и зеркало в номере", title: "Фен и зеркало" },
 	{ src: img18, alt: "Фен и шкаф для одежды", title: "Фен и шкаф" },
 	{ src: img19, alt: "Шкаф и кровать в номере", title: "Шкаф и кровать" },
-  
+
 	// { src: img10, alt: "Логотип отеля Бекарыс", title: "Логотип Бекарыс" },
 	// { src: img11, alt: "Основной логотип отеля", title: "Логотип — основа" },
-  
-	{ src: img15, alt: "Санузел в номере отеля", title: "Санузел" },
 
+	{ src: img15, alt: "Санузел в номере отеля", title: "Санузел" },
 
 	{ src: img20, alt: "Интерьер номера — фото 1", title: "Интерьер номера" },
 	{ src: img21, alt: "Интерьер номера — фото 2", title: "Интерьер номера" },
@@ -74,6 +73,10 @@ const photos = [
 				`}
 			>
 				<Image
+					width={630}
+					height={630}
+					format={"webp"}
+					quality={"mid"}
 					class="rounded-xl object-cover w-full h-full"
 					src={img.src}
 					title={img.title}
