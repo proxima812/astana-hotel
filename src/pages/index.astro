@@ -6,16 +6,20 @@ import ImageBlurFocus from "@/components/ImageBlurFocus.astro"
 import Socials from "@/components/widgets/Socials.astro"
 import { socials } from "@/data/data"
 import { Icon } from "astro-icon/components"
+
+export const prerender = true
 ---
 
 <Layout bodyStyle="bg-[#f8fafc]" title="" description="">
 	<div class="flex justify-center items-center flex-col">
-		<span class="text-zinc-600 flex items-center gap-1"
-			><Icon name="mdi:hours-24" /><span>Круглосуточно <b>24/7</b></span></span
+		<span class="text-zinc-600 flex items-center gap-1 font-medium mb-4"
+			><Icon name="mdi:clock-check" class="text-green-500 text-lg" /><span
+				>Круглосуточно <b>24/7</b> 🔥</span
+			></span
 		>
 		<h1 class="select-none text-5xl lg:text-7xl uppercase text-center tracking-tighter">
-			<span class="font-medium text-zinc-500">Гостиница</span>
-			<AuroraText speed={1} colors={["#111", "#0C1C50", "#22052D"]} class="font-bold">
+			<span class="font-semibold text-slate-600">Гостиница</span>
+			<AuroraText speed={1} colors={["#111", "#0C1C50", "#22052D"]} class="font-black">
 				Бекарыс
 			</AuroraText>
 		</h1>
