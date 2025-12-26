@@ -99,7 +99,7 @@ export const navigation = [
 	{
 		label: "Отзывы",
 		href: "https://www.instagram.com/stories/highlights/17865925371537116/",
-		// target: "_blank",
+		target: "_blank",
 		icon: "mdi:account-multiple",
 		style: "",
 	},
