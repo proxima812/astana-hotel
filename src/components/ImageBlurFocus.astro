@@ -1,66 +1,68 @@
 ---
 import { Image } from "astro:assets"
 
-import img20 from "@/assets/images/IMG_4439.jpg"
-import img21 from "@/assets/images/IMG_4442.jpg"
-import img22 from "@/assets/images/IMG_4443.jpg"
-import img23 from "@/assets/images/IMG_4444.jpg"
-import img24 from "@/assets/images/IMG_4696.jpg"
-import img25 from "@/assets/images/IMG_4697.jpg"
-import img26 from "@/assets/images/IMG_4699.jpg"
-import img27 from "@/assets/images/IMG_4700.jpg"
-import img28 from "@/assets/images/IMG_4701.jpg"
-import img1 from "@/assets/images/анфас.jpg"
-import img2 from "@/assets/images/вешалки.jpg"
-import img3 from "@/assets/images/вид с освещением.jpg"
-import img4 from "@/assets/images/вид сбоку кровать.jpg"
-import img5 from "@/assets/images/зеркало.jpg"
-import img6 from "@/assets/images/кровать.jpg"
-import img7 from "@/assets/images/кухня и картины.jpg"
-import img8 from "@/assets/images/кухня и стол.jpg"
-import img9 from "@/assets/images/кухня.jpg"
-import img12 from "@/assets/images/общ вид.jpg"
-import img13 from "@/assets/images/основная.jpg"
-import img14 from "@/assets/images/прикроватное освещение.jpg"
-import img15 from "@/assets/images/санузел.jpg"
-import img16 from "@/assets/images/стол и фен.jpg"
-import img17 from "@/assets/images/фен и зеркало.jpg"
-import img18 from "@/assets/images/фен и шкаф.jpg"
-import img19 from "@/assets/images/шкаф и кровать.jpg"
+import img1 from "@/assets/images/1.jpg"
+import img10 from "@/assets/images/10.jpg"
+import img11 from "@/assets/images/11.jpg"
+import img12 from "@/assets/images/12.jpg"
+import img13 from "@/assets/images/13.jpg"
+import img14 from "@/assets/images/14.jpg"
+import img15 from "@/assets/images/15.jpg"
+import img16 from "@/assets/images/16.jpg"
+import img17 from "@/assets/images/17.jpg"
+import img18 from "@/assets/images/18.jpg"
+import img19 from "@/assets/images/19.jpg"
+import img2 from "@/assets/images/2.jpg"
+import img20 from "@/assets/images/20.jpg"
+import img21 from "@/assets/images/21.jpg"
+import img22 from "@/assets/images/22.jpg"
+import img23 from "@/assets/images/23.jpg"
+import img24 from "@/assets/images/24.jpg"
+import img25 from "@/assets/images/25.jpg"
+import img26 from "@/assets/images/26.jpg"
+import img27 from "@/assets/images/27.jpg"
+import img28 from "@/assets/images/28.jpg"
+import img29 from "@/assets/images/29.jpg"
+import img3 from "@/assets/images/3.jpg"
+import img30 from "@/assets/images/30.jpg"
+import img4 from "@/assets/images/4.jpg"
+import img5 from "@/assets/images/5.jpg"
+import img6 from "@/assets/images/6.jpg"
+import img7 from "@/assets/images/7.jpg"
+import img8 from "@/assets/images/8.jpg"
+import img9 from "@/assets/images/9.jpg"
 
 const photos = [
-	{ src: img1, alt: "Фасад номера отеля Бекарыс", title: "Анфас номера" },
-	{ src: img6, alt: "Кровать в номере отеля", title: "Кровать" },
-	{ src: img12, alt: "Общий вид номера", title: "Общий вид" },
-	{ src: img13, alt: "Основной интерьер номера", title: "Основной вид номера" },
-	{ src: img14, alt: "Прикроватное освещение", title: "Освещение у кровати" },
-	{ src: img2, alt: "Вешалки и зона хранения одежды", title: "Вешалки" },
-	{ src: img8, alt: "Кухонная зона со столом", title: "Кухня и стол" },
-	{ src: img3, alt: "Номер с вечерним освещением", title: "Вид номера с освещением" },
-	{ src: img4, alt: "Кровать сбоку в интерьере номера", title: "Кровать — вид сбоку" },
-	{ src: img7, alt: "Кухня с декоративными картинами", title: "Кухня и картины" },
-	{ src: img5, alt: "Зеркало в интерьере номера", title: "Зеркало" },
-	{ src: img9, alt: "Общий вид кухни в номере", title: "Кухня" },
-	{ src: img16, alt: "Рабочий стол и фен в номере", title: "Стол и фен" },
-	{ src: img17, alt: "Фен и зеркало в номере", title: "Фен и зеркало" },
-	{ src: img18, alt: "Фен и шкаф для одежды", title: "Фен и шкаф" },
-	{ src: img19, alt: "Шкаф и кровать в номере", title: "Шкаф и кровать" },
-
-	// { src: img10, alt: "Логотип отеля Бекарыс", title: "Логотип Бекарыс" },
-	// { src: img11, alt: "Основной логотип отеля", title: "Логотип — основа" },
-
-	{ src: img15, alt: "Санузел в номере отеля", title: "Санузел" },
-
-	{ src: img20, alt: "Интерьер номера — фото 1", title: "Интерьер номера" },
-	{ src: img21, alt: "Интерьер номера — фото 2", title: "Интерьер номера" },
-	{ src: img22, alt: "Интерьер номера — фото 3", title: "Интерьер номера" },
-	{ src: img23, alt: "Интерьер номера — фото 4", title: "Интерьер номера" },
-
-	{ src: img24, alt: "Детали интерьера номера", title: "Детали интерьера" },
-	{ src: img25, alt: "Детали интерьера номера", title: "Детали интерьера" },
-	{ src: img26, alt: "Детали интерьера номера", title: "Детали интерьера" },
-	{ src: img27, alt: "Детали интерьера номера", title: "Детали интерьера" },
-	{ src: img28, alt: "Детали интерьера номера", title: "Детали интерьера" },
+	{ src: img1, alt: "", title: "" },
+	{ src: img2, alt: "", title: "" },
+	{ src: img3, alt: "", title: "" },
+	{ src: img4, alt: "", title: "" },
+	{ src: img5, alt: "", title: "" },
+	{ src: img6, alt: "", title: "" },
+	{ src: img7, alt: "", title: "" },
+	{ src: img8, alt: "", title: "" },
+	{ src: img9, alt: "", title: "" },
+	{ src: img10, alt: "", title: "" },
+	{ src: img11, alt: "", title: "" },
+	{ src: img12, alt: "", title: "" },
+	{ src: img13, alt: "", title: "" },
+	{ src: img14, alt: "", title: "" },
+	{ src: img15, alt: "", title: "" },
+	{ src: img16, alt: "", title: "" },
+	{ src: img17, alt: "", title: "" },
+	{ src: img18, alt: "", title: "" },
+	{ src: img19, alt: "", title: "" },
+	{ src: img20, alt: "", title: "" },
+	{ src: img21, alt: "", title: "" },
+	{ src: img22, alt: "", title: "" },
+	{ src: img23, alt: "", title: "" },
+	{ src: img24, alt: "", title: "" },
+	{ src: img25, alt: "", title: "" },
+	{ src: img26, alt: "", title: "" },
+	{ src: img27, alt: "", title: "" },
+	{ src: img29, alt: "", title: "" },
+	{ src: img30, alt: "", title: "" },
+	{ src: img28, alt: "", title: "" },
 ]
 ---
 
@@ -68,19 +70,19 @@ const photos = [
 	{
 		photos.map((img, i) => (
 			<div
-				class={`rounded-xl shadow-md overflow-hidden h-full md:h-[200px] bg-center
-					${i >= photos.length - 2 ? "md:col-span-2 md:h-[250px] lg:col-span-2" : ""}
+				class={`rounded-xl shadow-md overflow-hidden h-full md:h-[215px] bg-center
+					${i >= photos.length - 2 ? "md:col-span-2 md:h-[320px] lg:col-span-2" : ""}
 				`}
 			>
 				<Image
 					width={630}
 					height={630}
 					format={"webp"}
-					quality={"mid"}
+					quality={"high"}
 					class="rounded-xl object-cover w-full h-full"
 					src={img.src}
-					title={img.title}
-					alt={img.alt}
+					title={img?.title || ""}
+					alt={img?.alt || ""}
 				/>
 			</div>
 		))
